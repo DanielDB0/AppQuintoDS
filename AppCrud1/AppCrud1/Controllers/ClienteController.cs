@@ -1,5 +1,4 @@
 ﻿using AppCrud1.Models;
-using AppCrud1.Repository;
 using AppCrud1.Repository.Contract;
 using Humanizer;
 using Microsoft.AspNetCore.Mvc;

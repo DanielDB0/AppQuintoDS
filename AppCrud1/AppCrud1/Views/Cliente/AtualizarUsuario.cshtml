@@ -1,0 +1,53 @@
+﻿@model AppCrud1.Models.Cliente
+
+@{
+    ViewData["Title"] = "AtualizarUsuario";
+}
+
+<h1>AtualizarUsuario</h1>
+
+<h4>Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AtualizarUsuario">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeCli" class="control-label"></label>
+                <input asp-for="NomeCli" class="form-control" />
+                <span asp-validation-for="NomeCli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataCadastrada" class="control-label"></label>
+                <input asp-for="DataCadastrada" class="form-control" />
+                <span asp-validation-for="DataCadastrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CEP" class="control-label"></label>
+                <input asp-for="CEP" class="form-control" />
+                <span asp-validation-for="CEP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

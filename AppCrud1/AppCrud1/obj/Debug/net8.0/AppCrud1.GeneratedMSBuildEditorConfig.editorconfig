@@ -26,6 +26,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\bueno\Downloads\CrudAsp 1\CrudAsp\AppCrud1\AppCrud1
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/bueno/Downloads/CrudAsp 1/CrudAsp/AppCrud1/AppCrud1/Views/Cliente/AtualizarUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxBdHVhbGl6YXJVc3VhcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bueno/Downloads/CrudAsp 1/CrudAsp/AppCrud1/AppCrud1/Views/Cliente/CadastrarCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDYWRhc3RyYXJDbGllbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bueno/Downloads/CrudAsp 1/CrudAsp/AppCrud1/AppCrud1/Views/Cliente/DetalhesCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxEZXRhbGhlc0NsaWVudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bueno/Downloads/CrudAsp 1/CrudAsp/AppCrud1/AppCrud1/Views/Cliente/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/bueno/Downloads/CrudAsp 1/CrudAsp/AppCrud1/AppCrud1/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

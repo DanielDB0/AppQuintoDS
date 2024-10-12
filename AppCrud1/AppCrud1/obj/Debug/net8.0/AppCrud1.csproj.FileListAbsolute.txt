@@ -699,3 +699,4 @@ C:\Users\bueno\Downloads\CrudAsp 1\CrudAsp\AppCrud1\AppCrud1\obj\Debug\net8.0\re
 C:\Users\bueno\Downloads\CrudAsp 1\CrudAsp\AppCrud1\AppCrud1\obj\Debug\net8.0\AppCrud1.pdb
 C:\Users\bueno\Downloads\CrudAsp 1\CrudAsp\AppCrud1\AppCrud1\obj\Debug\net8.0\AppCrud1.genruntimeconfig.cache
 C:\Users\bueno\Downloads\CrudAsp 1\CrudAsp\AppCrud1\AppCrud1\obj\Debug\net8.0\ref\AppCrud1.dll
+C:\Users\bueno\Downloads\CrudAsp 1\CrudAsp\AppCrud1\AppCrud1\obj\Debug\net8.0\AppCrud1.sourcelink.json
