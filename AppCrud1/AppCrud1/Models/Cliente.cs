@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Numerics;
 
 namespace AppCrud1.Models
 {
@@ -23,6 +24,6 @@ namespace AppCrud1.Models
 
         [Display (Name = "Telefone")]
         [Required (ErrorMessage = "O campo Telefone é obrigatório")]
-        public int Telefone { get; set; }
+        public Int64 Telefone { get; set; }
     }
 }

@@ -7,16 +7,16 @@ namespace AppCrud1.Controllers
 {
     public class ClienteController : Controller
     {
-        private IClienteRepository _ClienteRepository;
+        private IClienteRepository _clienteRepository;
 
-        public ClienteController(IClienteRepository ClienteRepository)
+        public ClienteController(IClienteRepository clienteRepository)
         {
-            _ClienteRepository = ClienteRepository;
+            _clienteRepository = clienteRepository;
         }
 
         public IActionResult Index()
         {
-            return View(_ClienteRepository.ObterTodosClientes());
+            return View(_clienteRepository.ObterTodosClientes());
         }
         [HttpGet]
         public IActionResult CadastrarCliente()
@@ -28,7 +28,7 @@ namespace AppCrud1.Controllers
         {
             if (ModelState.IsValid)
             {
-                _ClienteRepository.Cadastrar(cliente);
+                _clienteRepository.Cadastrar(cliente);
             }
             return View();
         }
@@ -38,12 +38,12 @@ namespace AppCrud1.Controllers
 
         public IActionResult AtualizarCliente(int Id)
         {
-            return View(_ClienteRepository.ObterCliente(Id));
+            return View(_clienteRepository.ObterCliente(Id));
         }
         [HttpPost]
-        public IActionResult AtualizarUsuario(Cliente cliente)
+        public IActionResult AtualizarCliente(Cliente cliente)
         {
-            _ClienteRepository.Atualizar(cliente);
+            _clienteRepository.Atualizar(cliente);
 
             return RedirectToAction(nameof(Index));
         }
@@ -51,19 +51,19 @@ namespace AppCrud1.Controllers
         [HttpGet]
         public IActionResult ExcluirCliente(int id)
         {
-            _ClienteRepository.Excluir(id);
+            _clienteRepository.Excluir(id);
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
 
         public IActionResult DetalhesCliente(int Id)
         {
-            return View(_ClienteRepository.ObterCliente(Id));
+            return View(_clienteRepository.ObterCliente(Id));
         }
         [HttpPost]
         public IActionResult DetalhesCliente(Cliente cliente)
         {
-            _ClienteRepository.Atualizar(cliente);
+            _clienteRepository.Atualizar(cliente);
 
             return RedirectToAction(nameof(Index));
         }

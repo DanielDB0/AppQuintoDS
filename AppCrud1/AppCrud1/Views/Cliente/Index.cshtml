@@ -1,14 +1,7 @@
 ﻿@model IEnumerable<AppCrud1.Models.Cliente>
 
-@{
-    ViewData["Title"] = "Index";
-}
+<h1>Lista de Clientes</h1>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -31,27 +24,34 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (Cliente cliente in Model) {
         <tr>
+                <td>
+                    @cliente.Id
+                </td>
+                <td>
+                    @cliente.NomeCli
+                </td>
+                <td>
+                    @cliente.Telefone
+                </td>
+                <td>
+                    @cliente.CEP
+                </td>
+                <td>
+                    @cliente.DataCadastrada
+                </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeCli)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataCadastrada)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CEP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefone)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                <button type="button" class="btn btn-warning">
+                    @Html.ActionLink("Editar", "AtualizarCliente", new { Id = cliente.Id })
+                </button>
+                <button type="button" class="btn btn-secondary">
+                    @Html.ActionLink("Detalhes", "DetalhesCliente", new { Id = cliente.Id }) 
+                </button>
+                <button type="button" class="btn btn-danger">
+                    @Html.ActionLink("Excluir", "ExcluirCliente", new { Id = cliente.Id } ,
+                    new { onclick = "return confirm('Deseja Realmente desativar?')"})
+                </button>
             </td>
         </tr>
 }

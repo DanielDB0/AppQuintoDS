@@ -25,10 +25,10 @@ namespace AppCrud1.Repository
 
 
 
-                cmd.Parameters.Add("@nomeUsu", MySqlDbType.VarChar).Value = Cliente.NomeCli;
+                cmd.Parameters.Add("@nomeCli", MySqlDbType.VarChar).Value = Cliente.NomeCli;
                 cmd.Parameters.Add("@Telefone", MySqlDbType.VarChar).Value = Cliente.Telefone;
                 cmd.Parameters.Add("@CEP", MySqlDbType.VarChar).Value = Cliente.CEP;
-                cmd.Parameters.Add("@IdUsu", MySqlDbType.VarChar).Value = Cliente.Id;
+                cmd.Parameters.Add("@IdCli", MySqlDbType.VarChar).Value = Cliente.Id;
 
                 cmd.ExecuteNonQuery();
                 conexao.Close();
@@ -59,7 +59,7 @@ namespace AppCrud1.Repository
             {
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand("call spExcluirCli(@IdCli)", conexao);
-                cmd.Parameters.AddWithValue("@IdUsu", Id);
+                cmd.Parameters.AddWithValue("@IdCli", Id);
                 int i = cmd.ExecuteNonQuery();
                 conexao.Close();
             }
@@ -85,11 +85,11 @@ namespace AppCrud1.Repository
                     ClienteList.Add(
                         new Cliente
                         {
-                            Id = Convert.ToInt32(dr["Id"]),
+                            Id = Convert.ToInt32(dr["IdCli"]),
                             NomeCli = (string)dr["NomeCli"],
                             CEP = Convert.ToInt32(dr["CEP"]),
-                            Telefone = Convert.ToInt32(dr["Telefone"]),
-                            DataCadastrada = Convert.ToDateTime(dr["DataCadastrada"])
+                            Telefone = Convert.ToInt64(dr["Telefone"]),
+                            DataCadastrada = Convert.ToDateTime(dr["DataRegistro"])
                         });
                 }
                 return ClienteList;
@@ -116,11 +116,11 @@ namespace AppCrud1.Repository
 
                 while (dr.Read())
                 {
-                    Cliente.Id = Convert.ToInt32(dr["Id"]);
+                    Cliente.Id = Convert.ToInt32(dr["IdCli"]);
                     Cliente.NomeCli = (string)dr["NomeCli"];
                     Cliente.CEP = Convert.ToInt32(dr["CEP"]);
-                    Cliente.Telefone = Convert.ToInt32(dr["Telefone"]);
-                    Cliente.DataCadastrada = Convert.ToDateTime(dr["DataCadastrada"]);
+                    Cliente.Telefone = Convert.ToInt64(dr["Telefone"]);
+                    Cliente.DataCadastrada = Convert.ToDateTime(dr["DataRegistro"]);
                 }
                 return Cliente;
 

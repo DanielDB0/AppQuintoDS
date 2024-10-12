@@ -1,14 +1,7 @@
 ﻿@model IEnumerable<AppCrud1.Models.Usuario>
 
-@{
-    ViewData["Title"] = "Index";
-}
+<h1>Lista de Usuários</h1>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -44,7 +37,7 @@
             </td>
             <td>
                 <button type="button" class="btn btn-warning">
-                        @Html.ActionLink("Editar", "AtualizarUsuario", new { id = usuario.IdUsu }) |
+                        @Html.ActionLink("Editar", "AtualizarUsuario", new { id = usuario.IdUsu })
                 </button>
                 <button type="button" class="btn btn-secondary">                    
                         @Html.ActionLink("Detalhes", "DetalhesUsuario", new { id = usuario.IdUsu }) 
