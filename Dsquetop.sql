@@ -54,7 +54,7 @@ create table tbCliente(
     nomeCli varchar(50) not null,
     DataRegistro datetime not null,
     CEP int not null,
-    Telefone decimal(11,0) not null,
+    Telefone decimal(11,0) not null,	
     constraint Fk_Cliente_Endereco foreign key (CEP) references tbEndereco(Id)
 );
 
@@ -65,9 +65,8 @@ begin
 	if (not exists (select Id from tbEndereco where CEP = vCEP)) then
 		insert into tbEndereco (CEP) values (vCEP);
     end if;
-	insert into tbCliente (nomeCli, CEP, Telefone, DataRegistro) values (vNome, (select Id from tbEndereco where CEP = vCEP), vTelefone, current_date());
-end $$ 
-
+	insert into tbCliente (nomeCli, CEP, Telefone, DataRegistro) values (vNome, (select Id from tbEndereco where CEP = vCEP), vTelefone, current_timestamp());
+end $$ 	
 
 Delimiter $$
 create procedure spAttCli(vId int, vNome varchar(50), vCEP decimal(8,0), vTelefone decimal(11,0))
@@ -82,14 +81,14 @@ end $$
 DELIMITER $$
 create procedure spExcluirCli(vId int)
 begin
-	 delete from tbCliente where IdCli = vId;
+	 delete from tbCliente where IdCli = vId;	
 end $$ 
 
-Delimiter $$
 
+Delimiter $$
 create procedure spObterClient(vId int)
 BEGIN
-	select tbCliente.IdCli, tbCliente.nomeCli,tbCliente.DataRegistro, tbCliente.Telefone, tbEndereco.CEP from tbCliente inner join tbEndereco on tbCliente.CEP = tbEndereco.Id where tbCliente.Id = vId;
+	select tbCliente.IdCli, tbCliente.nomeCli,tbCliente.DataRegistro, tbCliente.Telefone, tbEndereco.CEP from tbCliente inner join tbEndereco on tbCliente.CEP = tbEndereco.Id where tbCliente.IdCli = vId;
 END $$
 
 Delimiter $$
@@ -97,6 +96,5 @@ create procedure spObterAllClients()
 BEGIN
 	select tbCliente.IdCli, tbCliente.nomeCli,tbCliente.DataRegistro, tbCliente.Telefone, tbEndereco.CEP from tbCliente inner join tbEndereco on tbCliente.CEP = tbEndereco.Id;
 END $$
-
 
 describe tbCliente
